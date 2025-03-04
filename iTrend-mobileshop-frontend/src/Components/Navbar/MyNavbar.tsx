@@ -4,7 +4,8 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 const Navbar = () => {
   return (
-    <nav className="navbar navbar-expand-lg navbar-light bg-warning">
+    // <nav className="navbar navbar-expand-lg navbar-light bg-warning">
+    <nav className="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
       <div className="container">
         <Link className="navbar-brand fw-bold text-danger" to="/">
           ShopEase
@@ -23,27 +24,27 @@ const Navbar = () => {
         <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav ms-auto">
             <li className="nav-item">
-              <Link className="nav-link text-dark" to="/">
+              <Link className="nav-link text-light" to="/">
                 Home
               </Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link text-dark" to="/products">
+              <Link className="nav-link text-light" to="/products">
                 Products
               </Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link text-dark" to="/cart">
+              <Link className="nav-link text-light" to="/cart">
                 Cart 🛒
               </Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link text-dark" to="/orders">
+              <Link className="nav-link text-light" to="/orders">
                 Orders
               </Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link text-dark" to="/profile">
+              <Link className="nav-link text-light" to="/profile">
                 Profile
               </Link>
             </li>
