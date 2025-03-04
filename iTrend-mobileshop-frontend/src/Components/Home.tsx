@@ -2,14 +2,20 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Footer from "./Footer";
+import Img1 from "../assets/item_img_3391.jpeg";
+import Img2 from "../assets/item_img_3416.jpeg";
+import Img3 from "../assets/item_img_3558.jpeg";
+import Img4 from "../assets/item_img_3483.jpg";
+import Img5 from "../assets/item_img_3577.jpeg";
+import Img6 from "../assets/item_img_34632.jpeg";
 
 const featuredProducts = [
-  { id: 1, name: "Smartphone", price: 499.99, image: "https://via.placeholder.com/150" },
-  { id: 2, name: "Laptop", price: 999.99, image: "https://via.placeholder.com/150" },
-  { id: 3, name: "Wireless Earbuds", price: 79.99, image: "https://via.placeholder.com/150" },
-  { id: 4, name: "Smartwatch", price: 299.99, image: "https://via.placeholder.com/150" },
-  { id: 5, name: "Tablet", price: 599.99, image: "https://via.placeholder.com/150" },
-  { id: 6, name: "Gaming Headset", price: 129.99, image: "https://via.placeholder.com/150" },
+  { id: 1, name: "Smartphone", price: 499.99, image: Img1},
+  { id: 2, name: "Laptop", price: 999.99, image: Img2  },
+  { id: 3, name: "Wireless Earbuds", price: 79.99, image: Img3 },
+  { id: 4, name: "Smartwatch", price: 299.99, image: Img4 },
+  { id: 5, name: "Tablet", price: 599.99, image: Img5 },
+  { id: 6, name: "Gaming Headset", price: 129.99, image: Img6 },
 ];
 
 const backgroundImages = [
@@ -70,7 +76,7 @@ const Home = () => {
           {featuredProducts.map((product) => (
             <div className="col-md-4 mb-4" key={product.id}>
               <div className="card shadow-sm">
-                <img src={product.image} className="card-img-top" alt={product.name} />
+                <img src={product.image} className="card-img-top" alt={product.name} width="150" height="250" />
                 <div className="card-body text-center">
                   <h5 className="card-title">{product.name}</h5>
                   <p className="card-text text-danger fw-bold">${product.price.toFixed(2)}</p>
