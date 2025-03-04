@@ -33,7 +33,11 @@ const SignUp = () => {
       alert("Sign-up successful! Please log in.");
       navigate("/signin"); // Redirect to sign-in page
     } catch (err) {
-      setError(err.message);
+      if (err instanceof Error) {
+        setError(err.message);
+      } else {
+        setError("An unknown error occurred");
+      }
     }
   };
 
