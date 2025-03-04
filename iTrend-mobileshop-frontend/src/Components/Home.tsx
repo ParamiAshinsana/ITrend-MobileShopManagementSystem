@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
+import Footer from "./Footer";
 
 const featuredProducts = [
   { id: 1, name: "Smartphone", price: 499.99, image: "https://via.placeholder.com/150" },
@@ -80,6 +81,9 @@ const Home = () => {
           ))}
         </div>
       </div>
+
+      {/* Footer Component */}
+      <Footer />
     </div>
   );
 };
