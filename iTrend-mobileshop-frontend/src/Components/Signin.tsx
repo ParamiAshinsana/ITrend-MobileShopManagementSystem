@@ -24,7 +24,7 @@ const SignIn = () => {
       }
 
       alert("Sign-in successful!");
-      navigate("/products");  // Redirect to the dashboard or home page after successful login
+      navigate("/");  // Redirect to the dashboard or home page after successful login
     } catch (err) {
       if (err instanceof Error) {
         setError(err.message);
