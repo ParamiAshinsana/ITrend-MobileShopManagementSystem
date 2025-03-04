@@ -15,7 +15,7 @@ const featuredProducts = [
 const backgroundImages = [
   "https://i.gadgets360cdn.com/large/iPhone_13_colours_leak_1626162021772.jpg",
   "https://static1.srcdn.com/wordpress/wp-content/uploads/2020/11/5CDF4DAD-4F2E-490F-A0B2-669BF1F93689.jpeg",
-  "https://knowtechie.com/wp-content/uploads/2023/09/iphone-15-pro-purple-backgorund.jpg",
+  "https://static1.anpoimages.com/wordpress/wp-content/uploads/2024/09/apple-iphone-16-hero.jpg",
 ];
 
 const Home = () => {
