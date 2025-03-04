@@ -14,8 +14,15 @@ mongoose.connect(process.env.MONGO_URI, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
 })
-.then(() => console.log('MongoDB Connected'))
-.catch(err => console.error(err));
+.then(() => console.log('✅ MongoDB Connected'))
+.catch(err => {
+    console.error('❌ MongoDB Connection Error:', err.message);
+    process.exit(1); // Exit process on failure
+});
+
+// Import Routes
+const userRoutes = require('./routes/userRoutes');
+app.use('/api', userRoutes); // Prefix API routes with /api
 
 // Sample Route
 app.get('/', (req, res) => {
@@ -24,4 +31,4 @@ app.get('/', (req, res) => {
 
 // Start Server
 const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+app.listen(PORT, () => console.log(`🚀 Server running on port ${PORT}`));
