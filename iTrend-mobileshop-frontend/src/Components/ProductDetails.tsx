@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { useParams } from "react-router-dom";
 import products from "./productsData";
 
+
+
 const ProductDetails: React.FC = () => {
   const { id } = useParams<{ id?: string }>();
   const product = products.find((p) => p.id === parseInt(id || "0"));
@@ -13,7 +15,8 @@ const ProductDetails: React.FC = () => {
   }
 
   return (
-    <div className="container mt-5">
+    // <div className="container mt-5 border border-3" style={{ marginTop: "100px" }}>
+    <div className="container border border-3" style={{ marginTop: "150px" }}>
       <div className="row">
         {/* Product Image */}
         <div className="col-md-6 text-center">
@@ -37,6 +40,8 @@ const ProductDetails: React.FC = () => {
 
           {/* Buttons */}
           <button className="btn btn-success me-2">Add to Cart 🛒</button>
+          
+
           <button className="btn btn-primary">Buy Now 🚀</button>
         </div>
       </div>

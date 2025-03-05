@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link , useNavigate} from "react-router-dom";
 
 interface ProductCardProps {
   id: number;
@@ -9,6 +9,13 @@ interface ProductCardProps {
 }
 
 const ProductCard: React.FC<ProductCardProps> = ({ id, name, price, image }) => {
+
+    const navigate = useNavigate();
+
+  const handleAddToCart = () => {
+    navigate(`/addtocart`, { state: { id, name, price, image, quantity: 1 } });
+  };
+
   return (
     <div className="col-md-4 mb-4">
       <div className="card shadow-sm">
@@ -18,7 +25,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ id, name, price, image }) => 
         <div className="card-body text-center">
           <h5 className="card-title">{name}</h5>
           <p className="card-text text-danger fw-bold">${price.toFixed(2)}</p>
-          <button className="btn btn-success">Add to Cart 🛒</button>
+          <button className="btn btn-success" onClick={handleAddToCart}>Add to Cart 🛒</button>
         </div>
       </div>
     </div>
