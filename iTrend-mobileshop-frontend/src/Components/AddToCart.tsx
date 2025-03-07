@@ -127,10 +127,6 @@ const AddToCart: React.FC = () => {
 </div>
 
 
-
-
-
-      
       {/* Proceed to Checkout Button */}
       <div className="text-center mt-6">
         <button onClick={() => navigate("/products")} className="bg-green-500 text-black px-6 py-3 rounded-lg text-lg font-semibold hover:bg-green-600 transition">
