@@ -17,6 +17,12 @@ const signUp = async (req, res) => {
     const newUser = new User({ fullName, email, password: hashedPassword });
     await newUser.save();
 
+    // Log the user details in the console
+    console.log("New user registered:");
+    console.log(`ID: ${newUser._id}`);
+    console.log(`Name: ${newUser.fullName}`);
+    console.log(`Email: ${newUser.email}`);
+
     res.status(201).json({ message: "User registered successfully" });
   } catch (error) {
     res.status(500).json({ message: "Server error", error });
