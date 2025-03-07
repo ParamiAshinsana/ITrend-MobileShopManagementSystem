@@ -1,6 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap-icons/font/bootstrap-icons.css";
+
 
 const Navbar = () => {
   return (
@@ -33,7 +35,31 @@ const Navbar = () => {
                 Products
               </Link>
             </li>
+            
             <li className="nav-item">
+              <Link className="nav-link text-light" to="/signin">
+              <i className="bi bi-heart fs-3"></i>
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link className="nav-link text-light" to="/signin">
+              <i className="bi bi-cart fs-3"></i>
+              </Link>
+            </li>
+            <li className="nav-item ">
+              <Link className="nav-link text-light" to="/signin">
+              <i className="bi bi-person fs-3 mb-3"></i>
+              </Link>
+            </li>
+
+            
+
+            
+
+
+
+
+            {/* <li className="nav-item">
               <Link className="nav-link text-light" to="/cart">
                 Cart 🛒
               </Link>
@@ -52,7 +78,7 @@ const Navbar = () => {
               <Link className="nav-link text-light" to="/signin">
                 SignIn
               </Link>
-            </li>
+            </li> */}
           </ul>
         </div>
       </div>
