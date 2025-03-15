@@ -9,18 +9,18 @@ const {
 } = require('../controllers/itemController');
 
 // Add a new item
-router.post('/items', addItem);
+router.post('/addItems', addItem);
 
 // Update an item by itemId
-router.put('/items/:itemId', updateItem);
+router.put('/updateItems/:itemId', updateItem);
 
 // Delete an item by itemId
-router.delete('/items/:itemId', deleteItem);
+router.delete('/deleteItems/:itemId', deleteItem);
 
 // Get a single item by itemId
-router.get('/items/:itemId', getItem);
+router.get('/getItems/:itemId', getItem);
 
 // Get all items
-router.get('/items', getAllItems);
+router.get('/getAllItems', getAllItems);
 
 module.exports = router;
