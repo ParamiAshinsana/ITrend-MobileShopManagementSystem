@@ -48,7 +48,17 @@ const signIn = async (req, res) => {
   }
 };
 
-module.exports = { signUp, signIn };
+// Get Users function
+const getUsers = async (req, res) => {
+  try {
+    const users = await User.find({}, "-password"); // Exclude passwords for security
+    res.status(200).json(users);
+  } catch (error) {
+    res.status(500).json({ message: "Server error", error });
+  }
+};
+
+module.exports = { signUp, signIn , getUsers };
 
 
 

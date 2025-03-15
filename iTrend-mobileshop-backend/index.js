@@ -7,7 +7,13 @@ const app = express();
 app.use(express.json());
 
 // Enable CORS for frontend (React)
-app.use(cors({ origin: "http://localhost:5173", credentials: true }));
+// app.use(cors({ origin: "http://localhost:5175", credentials: true }));
+app.use(
+  cors({
+    origin: ["http://localhost:5173", "http://localhost:5175"], // Allow multiple frontend origins
+    credentials: true,
+  })
+);
 
 const PORT = process.env.PORT || 5000;
 
