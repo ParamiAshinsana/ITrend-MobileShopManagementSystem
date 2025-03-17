@@ -10,7 +10,7 @@ const itemSchema = new mongoose.Schema({
   brand: { type: String, required: true },
   model: { type: String, required: true },
   description: { type: String },
-  color: { type: String },
+  color: { type: String, required: true },
   price: { type: Number, required: true },
   stockQuantity: { type: Number, required: true },
   status: { 
@@ -21,7 +21,7 @@ const itemSchema = new mongoose.Schema({
 });
 
 // Ensure unique combination of brand and model
-itemSchema.index({ brand: 1, model: 1 }, { unique: true });
+itemSchema.index({ brand: 1, model: 1, color:1 }, { unique: true });
 
 const Item = mongoose.model('Item', itemSchema);
 

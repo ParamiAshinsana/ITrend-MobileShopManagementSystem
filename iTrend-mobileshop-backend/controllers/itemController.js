@@ -6,7 +6,7 @@ exports.addItem = async (req, res) => {
 
   try {
     // Check if the item already exists by brand and model
-    const existingItem = await Item.findOne({ brand, model });
+    const existingItem = await Item.findOne({ brand, model, color });
     if (existingItem) {
       return res.status(400).json({ message: 'This item already exists.' });
     }
