@@ -18,6 +18,7 @@ const itemSchema = new mongoose.Schema({
     required: true, 
     enum: ['Available', 'Out of Stock'],
   },
+  orders: [{ type: mongoose.Schema.Types.ObjectId, ref: "Order" }], // Link to Orders
 });
 
 // Ensure unique combination of brand and model
