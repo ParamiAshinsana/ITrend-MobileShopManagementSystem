@@ -8,19 +8,55 @@ const Navbar = () => {
 
   const [cartCount, setCartCount] = useState<number>(0);
 
-  useEffect(() => {
-    // Load cart count from local storage on mount
-    const savedCartCount = parseInt(localStorage.getItem("cartCount") || "0", 10);
-    setCartCount(savedCartCount);
+  // useEffect(() => {
+  //   // Load cart count from local storage on mount
+  //   const savedCartCount = parseInt(localStorage.getItem("cartCount") || "0", 10);
+  //   setCartCount(savedCartCount);
 
-    // Listen for storage updates
+  //   // Listen for storage updates
+  //   const handleStorageChange = () => {
+  //     const updatedCount = parseInt(localStorage.getItem("cartCount") || "0", 10);
+  //     setCartCount(updatedCount);
+  //   };
+
+  //   window.addEventListener("storage", handleStorageChange);
+    
+  //   return () => {
+  //     window.removeEventListener("storage", handleStorageChange);
+  //   };
+  // }, []);
+
+  useEffect(() => {
+    // Get the current userId from localStorage
+    const userId = localStorage.getItem("userId");
+
+    if (userId) {
+      // If user is signed in, get the cart data for the specific user
+      const userCartKey = `cart_${userId}`;
+      const userCart = JSON.parse(localStorage.getItem(userCartKey) || "[]");
+
+      // Calculate the total quantity in the cart for the signed-in user
+      const totalCartCount = userCart.reduce((total: number, item: any) => total + item.quantity, 0);
+      setCartCount(totalCartCount);
+    } else {
+      // No user signed in, reset cart count
+      setCartCount(0);
+    }
+
+    // Listen for storage updates (e.g., when cartCount is updated)
     const handleStorageChange = () => {
-      const updatedCount = parseInt(localStorage.getItem("cartCount") || "0", 10);
-      setCartCount(updatedCount);
+      const updatedUserId = localStorage.getItem("userId");
+      if (updatedUserId) {
+        const updatedCartKey = `cart_${updatedUserId}`;
+        const updatedCart = JSON.parse(localStorage.getItem(updatedCartKey) || "[]");
+        const updatedCartCount = updatedCart.reduce((total: number, item: any) => total + item.quantity, 0);
+        setCartCount(updatedCartCount);
+      }
     };
 
     window.addEventListener("storage", handleStorageChange);
-    
+
+    // Cleanup event listener on unmount
     return () => {
       window.removeEventListener("storage", handleStorageChange);
     };
