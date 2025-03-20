@@ -115,6 +115,8 @@ import Footer from "./Footer";
 import ProductCard from "./ProductCard";
 import products from "./productsData";
 
+
+import ItemsList from "../ItemsList";
 import { useNavigate,useParams } from "react-router-dom";
 
 const backgroundImages = [
@@ -152,10 +154,12 @@ const Home = () => {
 
       <div className="container mt-5">
         <h2 className="text-center mb-4">Featured Products</h2>
+
         <div className="row">
-          {products.map((product) => (
+          {/* {products.map((product) => (
             <ProductCard key={product.id} {...product} />
-          ))}
+          ))} */}
+           <ItemsList />
         </div>
       </div>
 

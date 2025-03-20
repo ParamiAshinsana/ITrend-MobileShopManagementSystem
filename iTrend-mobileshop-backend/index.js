@@ -11,7 +11,7 @@ app.use(express.json());
 // app.use(cors({ origin: "http://localhost:5175", credentials: true }));
 app.use(
   cors({
-    origin: ["http://localhost:5173", "http://localhost:5175"], // Allow multiple frontend origins
+    origin: ["http://localhost:5173", "http://localhost:5174"], // Allow multiple frontend origins
     credentials: true,
   })
 );
