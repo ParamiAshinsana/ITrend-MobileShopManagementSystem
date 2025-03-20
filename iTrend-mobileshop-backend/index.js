@@ -31,7 +31,6 @@ mongoose
 app.use("/api/auth", require("./routes/authRoutes"));
 app.use("/api/orders", require("./routes/orderRoutes"));
 app.use("/api/items", require("./routes/itemRoutes"));
-app.use("/api/images", require("./routes/imgRoutes")); // Add image routes
 
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
 // const PORT = process.env.PORT || 5000;
